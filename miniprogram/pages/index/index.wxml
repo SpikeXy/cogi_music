@@ -1,0 +1,11 @@
+
+<view class="container">
+  <view class="gif-container">
+    <image src="{{gifUrl}}" class="gif" />
+  </view>
+  <view class="button-container">
+    <button class="btn  {{ playBtnClassName }}" bindtap="playAudio">
+        {{isPlaying ? '暂停' : '播放'}}
+    </button>
+  </view>
+</view>
