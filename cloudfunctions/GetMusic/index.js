@@ -25,15 +25,17 @@ function trim(str) {
 exports.main = async (event, context) => {
   let fileList = [];
   let folder = event.folder;
+  let skip = event.skip;
+  let limit = event.limit;
   try {
     // 获取指定目录下所有文件信息
     const {
       data: fileInfoList
     } = await db.collection(folder)
-      .get().then(res => {
+      .skip(skip).limit(limit).get().then(res => {
         return res;
       })
-
+     // console.log(fileInfoList)
     for (let i = 0; i < fileInfoList.length; i++) {
       const fileInfo = fileInfoList[i]
       const {
@@ -48,6 +50,7 @@ exports.main = async (event, context) => {
         tempFileURL: file.tempFileURL
       })
     }
+    //console.log(fileList)
     return {
       code: 0,
       data: fileList

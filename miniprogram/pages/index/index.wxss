@@ -1,13 +1,24 @@
-/* 将GIF图片全屏占满整个窗口 */
-.gif {
-  width: 100%;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  padding-bottom: 32rpx;
 }
-/* 设置播放按钮样式 */
+.gif-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 55%;
+}
+.text {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
 button {
   background-color: #43C8B5;
   border: none;
